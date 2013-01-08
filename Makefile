@@ -1,4 +1,7 @@
-CC=clang++ -Wall
+# Test with an old compiler (Apple gcc 4.2)
+CC=/usr/bin/g++ -Wall
+# Test with a mondern compiler (Apple clang 4.1)
+#CC=clang++ -Wall
 
 all: Rolke FeldmanCousins test_TMath
 

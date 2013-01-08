@@ -57,8 +57,6 @@ ROOT.TMath
 TODO
 ----
 
-- create a Python wrapper using SWIG and / or Cython.
-
 - ROOT is GPL, astropy needs BSD.
   I'm not sure what license TFeldmanCousins and TRolke are, the TRolke 2.0 paper (http://inspirehep.net/record/826147) mentions MIT license, which would be OK.
   Ask if re-licensing possible?
@@ -66,3 +64,11 @@ TODO
   in the original papers and only cross-check against ROOT implementations.
 
 - Change cout / cerr error messages to C++ / Python exceptions?
+
+- create a Python wrapper using SWIG and / or Cython.
+
+- Add unit tests
+
+- Add benchmark
+
+- Pull request for gammalib and astropy
