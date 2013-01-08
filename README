@@ -1,0 +1,46 @@
+root_poisson_stats
+==================
+
+Introduction
+------------
+
+This is a standalone version of ROOT TRolke and TFeldmanCousins.
+
+It is simply C++, independent of ROOT.
+
+It will be useful for gammalib and maybe also astropy.
+
+Implementation
+--------------
+
+TFeldmanCousins and TRolke don't use a lot other ROOT functions.
+The ones that are needed are in TMath, see the notes there for details.
+There was some trivial code changes like not deriving from TObject, not using TString or TOption,
+and replacing Double_t -> double, Int_t -> int, TMath::Sqrt -> sqrt from cmath, ...
+
+Tests
+-----
+
+- The binaries Rolke and FeldmanCousins run the examples from the ROOT tutorial and print the same output.
+Running diff on this output wrt. the ROOT tutorial is the first test that it basically works.
+
+- Test against ROOT like this from Python
+import ROOT
+# You need to enter this once to make ROOT load it, otherwise it won't tab-complete!
+ROOT.TFeldmanCousins
+ROOT.TRolke
+ROOT.Math
+ROOT.TMath
+
+TODO
+----
+
+- create a Python wrapper using SWIG and / or Cython.
+
+- ROOT is GPL, astropy needs BSD.
+  I'm not sure what license TFeldmanCousins and TRolke are, the TRolke 2.0 paper (http://inspirehep.net/record/826147) mentions MIT license, which would be OK.
+  Ask if re-licensing possible?
+  If this doesn't pan out, rewrite in Cython using description
+  in the original papers and only cross-check against ROOT implementations.
+
+- Change cout / cerr error messages to C++ / Python exceptions?
