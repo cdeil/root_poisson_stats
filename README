@@ -15,14 +15,36 @@ Implementation
 
 TFeldmanCousins and TRolke don't use a lot other ROOT functions.
 The ones that are needed are in TMath, see the notes there for details.
-There was some trivial code changes like not deriving from TObject, not using TString or TOption,
+I made a lot of trivial code changes like not deriving from TObject, not using TString or TOption,
 and replacing Double_t -> double, Int_t -> int, TMath::Sqrt -> sqrt from cmath, ...
+
+Re-writing this in Cython would be quite an effort, it's 3000 lines of complicated math code:
+$ wc -l *.h *.cxx
+     115 SpecFuncCephes.h
+     114 TFeldmanCousins.h
+      12 TMath.h
+     193 TRolke.h
+     982 SpecFuncCephes.cxx
+     231 TFeldmanCousins.cxx
+     331 TMath.cxx
+    1448 TRolke.cxx
+    3426 total
 
 Tests
 -----
 
 - The binaries Rolke and FeldmanCousins run the examples from the ROOT tutorial and print the same output.
 Running diff on this output wrt. the ROOT tutorial is the first test that it basically works.
+
+source /opt/local/bin/thisroot.sh
+
+./Rolke > Rolke.txt
+root -b -q /opt/local/share/root/tutorials/math/Rolke.C > Rolke_ROOT.txt
+diff Rolke_ROOT.txt Rolke.txt
+
+./FeldmanCousins > FeldmanCousins.txt
+root -b -q /opt/local/share/root/tutorials/math/FeldmanCousins.C > FeldmanCousins_ROOT.txt
+diff FeldmanCousins_ROOT.txt FeldmanCousins.txt
 
 - Test against ROOT like this from Python
 import ROOT

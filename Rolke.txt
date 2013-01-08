@@ -1,0 +1,56 @@
+
+ ======================================================== 
+For model 1: Poisson / Binomial
+the Profile Likelihood interval is :
+[0,11.5943]
+
+ ======================================================== 
+For model 2 : Poisson / Gaussian
+the Profile Likelihood interval is :
+[3.88417,18.4584]
+
+ ======================================================== 
+For model 3 : Gaussian / Gaussian
+the Profile Likelihood interval is :
+[0,17.5005]
+***************************************
+* some more example's for gauss/gauss *
+*                                     *
+sensitivity:
+[0.00213408,9.0817]
+median limit:
+[0,9.21861] @ x =5
+ML limit:
+[0,9.21861] @ x =5
+sensitivity:
+[0.00213408,18.3004]
+the Profile Likelihood interval is :
+[0,17.5005]
+critical number: 13
+critical number for 5 sigma: 21
+***************************************
+
+ ======================================================== 
+For model 4 : Poissonian / Known
+the Profile Likelihood interval is :
+[0,4.08807]
+
+ ======================================================== 
+For model 5 : Gaussian / Known
+the Profile Likelihood interval is :
+[0,4.91504]
+
+ ======================================================== 
+For model 6 : Known / Binomial
+the Profile Likelihood interval is :
+[11.4655,36.3035]
+
+ ======================================================== 
+For model 7 : Known / Gaussian 
+the Profile Likelihood interval is :
+[0,20.1747]
+Example of the effect of bounded vs unbounded, For model 1
+the BOUNDED Profile Likelihood interval is :
+[0,1.1729]
+the UNBOUNDED Profile Likelihood interval is :
+[0,0.936334]
