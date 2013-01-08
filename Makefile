@@ -1,6 +1,6 @@
 CC=clang++ -Wall
 
-all: Rolke FeldmanCousins
+all: Rolke FeldmanCousins test_TMath
 
 SpecFuncCephes.o: SpecFuncCephes.h SpecFuncCephes.cxx
 	$(CC) -c SpecFuncCephes.cxx
@@ -26,5 +26,11 @@ FeldmanCousins.o: FeldmanCousins.C TFeldmanCousins.o
 FeldmanCousins: FeldmanCousins.o TFeldmanCousins.o
 	$(CC) FeldmanCousins.o TFeldmanCousins.o TMath.o SpecFuncCephes.o -lm -o FeldmanCousins
 
+test_TMath.o: test_TMath.C TMath.o
+	$(CC) -c test_TMath.C
+
+test_TMath: test_TMath.o SpecFuncCephes.o
+	$(CC) test_TMath.o TMath.o SpecFuncCephes.o -lm -o test_TMath
+
 clean:
-	- rm *.o Rolke FeldmanCousins
+	- rm *.o Rolke FeldmanCousins test_TMath

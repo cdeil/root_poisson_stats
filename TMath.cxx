@@ -1,6 +1,7 @@
 #include <cmath>
 #include <iostream>
 #include <vector>
+#include <functional>
 #include "SpecFuncCephes.h"
 #include "TMath.h"
 
@@ -325,7 +326,9 @@ void TMath::Sort(int n, const double* a, int* index)
    // sort
    std::sort( pairs.begin(), pairs.end() );
 
-   // set index array
-   for ( int i = 0; i < n; ++i )
-   	  index[i] = pairs[ i ].second;
+   for ( int i = 0; i < n; ++i ) {
+      // set index array (n - i - 1 because we want descending!)
+      // std::cout << i << " " << n - i - 1 << std::endl;
+   	  index[i] = pairs[ n - i - 1 ].second;
+      }
 }

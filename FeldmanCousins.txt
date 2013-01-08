@@ -1,6 +1,6 @@
 For 10 data observed with and estimated background
 of 3 candidates, the Feldman-Cousins method of 
 calculating confidence limits gives:
-	Upper Limit = 0
-	Lower Limit = 0
+	Upper Limit = 13.505
+	Lower Limit = 2.635
 at the 90% CL
