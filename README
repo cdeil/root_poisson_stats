@@ -30,6 +30,13 @@ $ wc -l *.h *.cxx
     1448 TRolke.cxx
     3426 total
 
+There's one special function which is not in the C / C++ math library: the incomplete gamma function.
+Here I bundle the version from ROOT, which is the one from the Cephes library.
+Note that this is not available in numpy, but scipy does include it, also the Cephes library version:
+http://docs.scipy.org/doc/scipy/reference/generated/scipy.special.gammainc.html
+scipy/scipy/special/generate_ufuncs.py:gammainc -- igam: dd->d -- cephes.h
+
+
 Tests
 -----
 
